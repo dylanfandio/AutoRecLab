@@ -15,6 +15,16 @@ This agent automates the research code development process by:
 - Using tree search to explore improvements and debug failures
 - Iteratively refining code until finding a satisfactory solution
 
+> [!NOTE]
+> **Academic Fork:** This repository is a fork of [AutoRecLab](https://github.com/ISG-Siegen/AutoRecLab).
+>
+> It is being maintained as part of a computer science internship at the **University of Siegen** focusing on **AutoResearch** and **AI4Research**. As a student research team, we are evaluating this LLM-based agentic system for the automation of Recommender Systems experiments.
+>
+> **Our Objectives:**
+> * **Analysis & Evaluation:** Testing the system's performance (Planner, Coder, Reviewer) within specific research settings.
+
+
+
 ## Quick Start
 
 ### Installation & Setup
