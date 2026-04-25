@@ -10,6 +10,7 @@
 > **Our Objectives:**
 > * **Analysis & Evaluation:** Testing the system's performance (Planner, Coder, Reviewer) within specific research settings.
 > * **Systematic Validation:** Investigating the limits of iterative generate-run-repair cycles and the methodological correctness of the generated artifacts.
+> * **Peer Review & Replicability:** Participating in a scientific review process to ensure that paper claims are fully backed by the provided code and experimental results.
 
 # AutoRecLab v1: Towards an Autonomous Recommender-Systems Researcher
 
@@ -22,15 +23,6 @@ This agent automates the research code development process by:
 - Executing and scoring them based on automatically generated requirements
 - Using tree search to explore improvements and debug failures
 - Iteratively refining code until finding a satisfactory solution
-
-> [!NOTE]
-> **Academic Fork:** This repository is a fork of [AutoRecLab](https://github.com/ISG-Siegen/AutoRecLab).
->
-> It is being maintained as part of a computer science internship at the **University of Siegen** focusing on **AutoResearch** and **AI4Research**. As a student research team, we are evaluating this LLM-based agentic system for the automation of Recommender Systems experiments.
->
-> **Our Objectives:**
-> * **Analysis & Evaluation:** Testing the system's performance (Planner, Coder, Reviewer) within specific research settings.
-
 
 
 ## Quick Start
