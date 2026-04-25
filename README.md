@@ -2,6 +2,14 @@
 > **Looking for the latest features?** This branch contains the current stable release aka. **AutoRecLab v1**. 
 > For active development and upcoming changes, please switch to the [`develop`](../../tree/develop) branch.
 
+> [!NOTE]
+> **Academic Fork:** This repository is a fork of [AutoRecLab](https://github.com/ISG-Siegen/AutoRecLab).
+>
+> It is being maintained as part of a computer science internship at the **University of Siegen** focusing on **AutoResearch** and **AI4Research**. As a student research team, we are evaluating this LLM-based agentic system for the automation of Recommender Systems experiments.
+>
+> **Our Objectives:**
+> * **Analysis & Evaluation:** Testing the system's performance (Planner, Coder, Reviewer) within specific research settings.
+> * **Systematic Validation:** Investigating the limits of iterative generate-run-repair cycles and the methodological correctness of the generated artifacts.
 
 # AutoRecLab v1: Towards an Autonomous Recommender-Systems Researcher
 
