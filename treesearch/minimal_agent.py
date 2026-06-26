@@ -9,6 +9,7 @@ from rich.console import Console
 from config import Config
 from treesearch.function_specs import (
     CodeRequirements,
+    ConfirmCoverage,
     PlanAndCode,
     ReviewFunction,
     ScoreCode,
@@ -426,6 +427,14 @@ class MinimalAgent:
         """Analyze execution results using both review function spec and scoring system."""
         node.absorb_exec_result(exec_result)
 
+        logger.debug("Scoring node %s", node.id)
+        logger.debug("Requirements count: %d", len(node.requirements))
+
+        # Full output
+        logger.debug("".join(node._term_out))
+        # Truncated output
+        logger.debug(node._term_out)
+
         # First, use the review_func_spec for buggy node identification
         review_prompt = {
             "Introduction": (
@@ -464,6 +473,10 @@ class MinimalAgent:
             # Update node with review results
             node.is_buggy = review_result.is_bug
             node.analysis = review_result.summary
+
+            logger.debug("Review result: is_buggy=%s", node.is_buggy)
+            if node.analysis:
+                logger.debug("Review summary: %s", node.analysis)
 
             if node.is_buggy:
                 logger.info(f"Node identified as buggy: {node.analysis}")
@@ -504,6 +517,7 @@ class MinimalAgent:
 
         # Use the scoring system
         for req in node.requirements:
+            logger.debug("Scoring requirement: %s", req.description)
             scoring_prompt: Prompt = {
                 "Instructions": (
                     "You are an expert recommender system researcher reviewing code for an experiment."
@@ -530,12 +544,63 @@ class MinimalAgent:
                 req.is_fulfilled = scoring_result.fulfilled
                 req.feedback = scoring_result.feedback
 
+                logger.debug(
+                    "Requirement fulfilled=%s; feedback=%s",
+                    req.is_fulfilled,
+                    req.feedback,
+                )
+
             except Exception as e:
                 logger.error(f"Error generate feedback for requirement: {req}")
                 logger.error(f"Error in scoring: {e}")
                 # Fallback requirement feedback
                 req.is_fulfilled = False
                 req.feedback = "No specific feedback provided."
+
+        all_fulfilled = all(r.is_fulfilled for r in node.requirements)
+        logger.debug("All requirements fulfilled=%s", all_fulfilled)
+        if not node.is_buggy and all_fulfilled:
+            logger.debug("Running coverage confirmation check")
+            confirm_prompt: Prompt = {
+                "Instructions": (
+                    "Double-check whether ALL requirements are fully covered by the code and execution output. "
+                    "If any requirement is not fully covered or evidence is missing, return confirmed=false and "
+                    "list the exact requirement strings that are missing."
+                ),
+                "Requirements": [r.description for r in node.requirements],
+                "Research Task": self.task_desc,
+                "Implementation": node.code,
+                "Execution output": node.term_out,
+            }
+
+            try:
+                confirm_result = (
+                    await Query(tool_budget=40)
+                    .with_mcp(self._mcp_docs)
+                    .with_system(
+                        "Be conservative: if evidence for any requirement is unclear or absent, mark it as missing."
+                    )
+                    .run(confirm_prompt, ConfirmCoverage)
+                )
+
+                logger.debug(
+                    "Coverage confirmation: confirmed=%s missing=%s notes=%s",
+                    confirm_result.confirmed,
+                    confirm_result.missing_requirements,
+                    confirm_result.notes,
+                )
+
+                if not confirm_result.confirmed:
+                    missing = {m.strip().lower() for m in confirm_result.missing_requirements}
+                    for req in node.requirements:
+                        if req.description.lower() in missing:
+                            req.is_fulfilled = False
+                            if req.feedback:
+                                req.feedback = req.feedback.strip() + " Coverage check failed."
+                            else:
+                                req.feedback = "Coverage check failed."
+            except Exception as e:
+                logger.error(f"Coverage confirmation failed: {e}")
 
         # Build overall feedback:
         num_fulfilled = 0
@@ -559,6 +624,7 @@ class MinimalAgent:
             )
 
         score = num_fulfilled / len(node.requirements)
+        logger.debug("Final score: %s (%d/%d)", score, num_fulfilled, len(node.requirements))
 
         if node.is_buggy:
             is_satisfactory = False
@@ -579,14 +645,14 @@ class MinimalAgent:
         return node
 
     async def _summarize(self, user_request: str, node: Node) -> str:
-        """Summarizes the results of a node and returns a human readable report.
+        """Summarizes the results of a node and returns a Markdown report.
 
         Args:
             user_request (str): The original request of the user.
             node (Node): Node to summarize.
 
         Returns:
-            str: A summary/answer to the user request based on the node's code and execution output.
+            str: A Markdown summary based on the node's code and execution output.
         """
         logger.info("Summarizing results...")
 
@@ -607,10 +673,11 @@ class MinimalAgent:
             "Instructions": [
                 "1. Use the code to interpret what the experiment did and what metrics or results are relevant.",
                 "2. Read the output carefully and extract factual findings that answer the user request.",
-                "3. Formulate your response as if chatting directly with the user — clear, concise, and natural.",
-                "4. Do not output any structured formats or metadata (no JSON, tables, etc.) unless the user request explicitly asks for it.",
-                "5. Be confident, factual, and grounded only in the provided information.",
-                "6. If the experiment output is ambiguous or incomplete, mention this explicitly instead of guessing.",
+                "3. Return valid Markdown only (no JSON, no XML, no code fences around the whole response).",
+                "4. Use this structure exactly: '# Experiment Summary', '## User Request', '## What Was Run', '## Key Results', '## Limitations', '## Conclusion'.",
+                "5. In '## Key Results', include a compact Markdown table. If exact values are unavailable, put 'N/A' and explain why.",
+                "6. Keep the summary concise, factual, and grounded only in the provided information.",
+                "7. If the experiment output is ambiguous or incomplete, mention this explicitly instead of guessing.",
             ],
         }
 
@@ -618,7 +685,7 @@ class MinimalAgent:
             await Query(temperature=0.0)
             .with_mcp(self._mcp_docs)
             .with_system(
-                "If you need to explain results or metrics, search for documentation about evaluation metrics and their interpretation. Focus on user-facing explanations."
+                "If you need to explain results or metrics, search for documentation about evaluation metrics and their interpretation. Focus on user-facing explanations. Output must be clean Markdown suitable for saving as summary.md."
             )
             .run(summary_prompt)
         )

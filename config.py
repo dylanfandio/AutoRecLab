@@ -17,6 +17,7 @@ class ExecConfig(BaseSettings):
     timeout: int = 3600
     enable_type_checking: bool = True
     max_type_check_attempts: int = 3
+    keep_only_relevant_files: bool = False
 
 
 class CodeConfig(BaseSettings):
@@ -32,7 +33,7 @@ class AgentConfig(BaseSettings):
 
 class Config(BaseSettings):
     model_config = SettingsConfigDict(
-        env_prefix="ARL_", env_nested_delimiter="__", toml_file=CONFIG_PATH
+        env_prefix="ARL_", env_nested_delimiter="__", toml_file=CONFIG_PATH, frozen=False
     )
 
     out_dir: str = "./out"

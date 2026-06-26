@@ -1,6 +1,7 @@
 import pickle
 import random
 import shutil
+import os
 from pathlib import Path
 
 from anytree import PreOrderIter
@@ -13,9 +14,11 @@ from treesearch.node import Node
 from treesearch.type_checker import TypeChecker
 from utils.log import _ROOT_LOGGER
 from utils.path import mkdir
+from utils.statistics_tracker import get_statistics_tracker
 from viz import render_trees
 
 logger = _ROOT_LOGGER.getChild("treesearch")
+statistics_tracker = get_statistics_tracker()
 
 
 class TreeSearch:
@@ -97,6 +100,7 @@ class TreeSearch:
             draft_node = await self._minimal_agent._draft()
             await self.exec_node(draft_node)
             self._draft_nodes.append(draft_node)
+            statistics_tracker.add_node(draft_node)
 
         for i in range(self._config.treesearch.max_iterations):
             logger.info(
@@ -110,6 +114,7 @@ class TreeSearch:
                 child_node = await self._minimal_agent._improve(parent_node)
 
             await self.exec_node(child_node)
+            statistics_tracker.add_node(child_node)
 
             if child_node.score.is_satisfactory:
                 logger.info("Found satisfactory node:")
@@ -198,6 +203,27 @@ class TreeSearch:
         # Also collect files from working subdirectory if it exists
         if working_dir.exists():
             generated_files.extend(list(working_dir.iterdir()))
+
+        # Keep only relevant files via whitelist
+        if self._config.exec.keep_only_relevant_files:
+            logger.info("Keeping only relevant files.")
+            keep = []
+            for item in generated_files:
+                if item.suffix.lower() in (".png", ".jpeg", ".jpg", ".json", ".csv"):
+                    logger.debug(f"Keeping {item.name}")
+                    keep.append(item)
+                else:
+                    logger.debug(f"Removing {item.name}")
+                    if item.is_dir():
+                        shutil.rmtree(str(item))
+                    else:
+                        os.remove(str(item))
+
+            generated_files = keep
+
+        else:
+            logger.info("Keeping all files.")
+        
         
         if generated_files:
             generated_dir = mkdir(node_dir / "generated")
@@ -219,20 +245,12 @@ class TreeSearch:
         self._write_text_report(report_path, final_report, result_node)
         logger.info(f"Final report written to {report_path}")
         logger.info("Final response:")
-        print(final_report)
-
-    def _write_text_report(self, report_path: Path, final_report: str, result_node: Node) -> None:
-        report_text = "\n".join(
-            [
-                "AutoRecLab Final Report",
-                f"Selected node: {result_node.id}",
-                f"Score: {result_node.score.score:.4f}",
-                "",
-                final_report,
-                "",
-            ]
-        )
-        report_path.write_text(report_text, encoding="utf-8")
+        summary = await self._minimal_agent._summarize(self._user_request, result_node)
+        summary_path = self._out_dir / "summary.md"
+        summary_path.write_text(summary, encoding="utf-8")
+        logger.info(f"Wrote markdown summary to: {summary_path}")
+        print(summary)
+        
 
     @property
     def _task_desc(self) -> str:
