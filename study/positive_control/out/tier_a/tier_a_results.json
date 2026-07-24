@@ -1,0 +1,200 @@
+[
+  {
+    "dataset": "MovieLens100K",
+    "seed": 42,
+    "algorithms": [
+      "ALS",
+      "ItemKNN",
+      "Pop"
+    ],
+    "projection": {
+      "users": 938,
+      "items": 1008,
+      "projected_recommendation_rows": 945504,
+      "projected_in_memory_bytes": 30256128,
+      "projected_in_memory_gib": 0.03,
+      "within_budget": true,
+      "row_budget": 20000000
+    },
+    "status": "ok",
+    "wall_seconds": 207.65614740000456,
+    "peak_rss_mib": 340.59765625,
+    "checkpoint_dir": "D:\\Yo\\Praktikum ML\\AutoRecLab-1\\AutoRecLab\\study\\positive_control\\out\\tier_a\\checkpoints\\MovieLens100K\\seed42",
+    "result_rows": 18,
+    "results": {
+      "MovieLens100K_seed42-eff9ee63": [
+        {
+          "algorithm": "LensKit.ImplicitMFScorer-f0dd7ecb-42",
+          "fold": null,
+          "name": "NDCG",
+          "k": 1,
+          "value": 0.20042643923240938
+        },
+        {
+          "algorithm": "LensKit.ImplicitMFScorer-f0dd7ecb-42",
+          "fold": null,
+          "name": "NDCG",
+          "k": 5,
+          "value": 0.17662614905415835
+        },
+        {
+          "algorithm": "LensKit.ImplicitMFScorer-f0dd7ecb-42",
+          "fold": null,
+          "name": "NDCG",
+          "k": 10,
+          "value": 0.1585414368895548
+        },
+        {
+          "algorithm": "LensKit.ImplicitMFScorer-f0dd7ecb-42",
+          "fold": null,
+          "name": "Precision",
+          "k": 1,
+          "value": 0.20042643923240938
+        },
+        {
+          "algorithm": "LensKit.ImplicitMFScorer-f0dd7ecb-42",
+          "fold": null,
+          "name": "Precision",
+          "k": 5,
+          "value": 0.17036247334754798
+        },
+        {
+          "algorithm": "LensKit.ImplicitMFScorer-f0dd7ecb-42",
+          "fold": null,
+          "name": "Precision",
+          "k": 10,
+          "value": 0.1476545842217484
+        },
+        {
+          "algorithm": "LensKit.ItemKNNScorer-c3d66610-42",
+          "fold": null,
+          "name": "NDCG",
+          "k": 1,
+          "value": 0.30383795309168443
+        },
+        {
+          "algorithm": "LensKit.ItemKNNScorer-c3d66610-42",
+          "fold": null,
+          "name": "NDCG",
+          "k": 5,
+          "value": 0.24346954268917462
+        },
+        {
+          "algorithm": "LensKit.ItemKNNScorer-c3d66610-42",
+          "fold": null,
+          "name": "NDCG",
+          "k": 10,
+          "value": 0.20750283319338914
+        },
+        {
+          "algorithm": "LensKit.ItemKNNScorer-c3d66610-42",
+          "fold": null,
+          "name": "Precision",
+          "k": 1,
+          "value": 0.30383795309168443
+        },
+        {
+          "algorithm": "LensKit.ItemKNNScorer-c3d66610-42",
+          "fold": null,
+          "name": "Precision",
+          "k": 5,
+          "value": 0.22707889125799574
+        },
+        {
+          "algorithm": "LensKit.ItemKNNScorer-c3d66610-42",
+          "fold": null,
+          "name": "Precision",
+          "k": 10,
+          "value": 0.18358208955223881
+        },
+        {
+          "algorithm": "LensKit.PopScorer-f4aa5539-42",
+          "fold": null,
+          "name": "NDCG",
+          "k": 1,
+          "value": 0.21321961620469082
+        },
+        {
+          "algorithm": "LensKit.PopScorer-f4aa5539-42",
+          "fold": null,
+          "name": "NDCG",
+          "k": 5,
+          "value": 0.15885491617624584
+        },
+        {
+          "algorithm": "LensKit.PopScorer-f4aa5539-42",
+          "fold": null,
+          "name": "NDCG",
+          "k": 10,
+          "value": 0.1385840295574469
+        },
+        {
+          "algorithm": "LensKit.PopScorer-f4aa5539-42",
+          "fold": null,
+          "name": "Precision",
+          "k": 1,
+          "value": 0.21321961620469082
+        },
+        {
+          "algorithm": "LensKit.PopScorer-f4aa5539-42",
+          "fold": null,
+          "name": "Precision",
+          "k": 5,
+          "value": 0.14413646055437102
+        },
+        {
+          "algorithm": "LensKit.PopScorer-f4aa5539-42",
+          "fold": null,
+          "name": "Precision",
+          "k": 10,
+          "value": 0.12217484008528785
+        }
+      ]
+    }
+  },
+  {
+    "dataset": "HetrecLastFM",
+    "seed": 42,
+    "algorithms": [
+      "ALS",
+      "ItemKNN",
+      "Pop"
+    ],
+    "projection": {
+      "users": 1090,
+      "items": 3646,
+      "projected_recommendation_rows": 3974140,
+      "projected_in_memory_bytes": 127172480,
+      "projected_in_memory_gib": 0.12,
+      "within_budget": true,
+      "row_budget": 20000000
+    },
+    "status": "completed_without_results",
+    "wall_seconds": 195.3815132000018,
+    "peak_rss_mib": 198.86328125,
+    "checkpoint_dir": "D:\\Yo\\Praktikum ML\\AutoRecLab-1\\AutoRecLab\\study\\positive_control\\out\\tier_a\\checkpoints\\HetrecLastFM\\seed42",
+    "results": {},
+    "swallowed_exception": true,
+    "captured_stderr_tail": " group in predictions.sort_values(\"rank\").groupby(\"user\"):\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Yo\\Praktikum ML\\AutoRecLab-1\\AutoRecLab\\.venv\\Lib\\site-packages\\pandas\\core\\frame.py\", line 7211, in sort_values\n    k = self._get_label_or_level_values(by[0], axis=axis)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Yo\\Praktikum ML\\AutoRecLab-1\\AutoRecLab\\.venv\\Lib\\site-packages\\pandas\\core\\generic.py\", line 1914, in _get_label_or_level_values\n    raise KeyError(key)\nKeyError: 'rank'\nTraceback (most recent call last):\n  File \"D:\\Yo\\Praktikum ML\\AutoRecLab-1\\AutoRecLab\\.venv\\Lib\\site-packages\\omnirec\\runner\\coordinator.py\", line 212, in run\n    self.run_split(\n  File \"D:\\Yo\\Praktikum ML\\AutoRecLab-1\\AutoRecLab\\.venv\\Lib\\site-packages\\omnirec\\runner\\coordinator.py\", line 365, in run_split\n    self._evaluator.run_evaluation(\n  File \"D:\\Yo\\Praktikum ML\\AutoRecLab-1\\AutoRecLab\\.venv\\Lib\\site-packages\\omnirec\\runner\\evaluation.py\", line 54, in run_evaluation\n    mr = m.calculate(predictions, test)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Yo\\Praktikum ML\\AutoRecLab-1\\AutoRecLab\\.venv\\Lib\\site-packages\\omnirec\\metrics\\ranking.py\", line 74, in calculate\n    top_k_dict = self.make_topk_dict(predictions)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Yo\\Praktikum ML\\AutoRecLab-1\\AutoRecLab\\.venv\\Lib\\site-packages\\omnirec\\metrics\\ranking.py\", line 24, in make_topk_dict\n    for user, group in predictions.sort_values(\"rank\").groupby(\"user\"):\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Yo\\Praktikum ML\\AutoRecLab-1\\AutoRecLab\\.venv\\Lib\\site-packages\\pandas\\core\\frame.py\", line 7211, in sort_values\n    k = self._get_label_or_level_values(by[0], axis=axis)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Yo\\Praktikum ML\\AutoRecLab-1\\AutoRecLab\\.venv\\Lib\\site-packages\\pandas\\core\\generic.py\", line 1914, in _get_label_or_level_values\n    raise KeyError(key)\nKeyError: 'rank'\n"
+  },
+  {
+    "dataset": "AmazonVideoGames",
+    "seed": 42,
+    "algorithms": [
+      "ALS",
+      "ItemKNN",
+      "Pop"
+    ],
+    "projection": {
+      "users": 33621,
+      "items": 12455,
+      "projected_recommendation_rows": 418749555,
+      "projected_in_memory_bytes": 13399985760,
+      "projected_in_memory_gib": 12.48,
+      "within_budget": false,
+      "row_budget": 20000000
+    },
+    "status": "refused_projected_infeasible",
+    "detail": "the OmniRec LensKit runner calls recommend() without a list length, which would rank all 12,455 items for each of 33,621 users (418,749,555 rows, ~12.48 GiB before JSON serialisation). Exceeds the 20,000,000 row budget."
+  }
+]

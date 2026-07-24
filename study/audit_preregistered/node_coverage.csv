@@ -1,0 +1,17 @@
+condition,run,node,source,raw_rows,keyed_rows,unique_keys,coverage_270,coverage_pct,duplicate_rows,datasets_covered,algorithms_covered,seeds_covered,nan_or_missing_values,zero_values,zero_block,provenance_mismatch_rows,metric_identity_breaks
+P2/Mini,V100_P2_MINI_I05_R01,a1bcca8153734209b941df4b0639e5e4,native,10,10,10,10,3.7,0,1,1,5,0,0,False,0,0
+P2/Mini,V100_P2_MINI_I05_R01,a1bcca8153734209b941df4b0639e5e4_seed,native,10,10,10,10,3.7,0,1,1,5,0,0,False,0,0
+P2/Mini,V100_P2_MINI_I05_R02,443c4e71b2bf42d6908fa425d51e3fd6,native,2,2,2,2,0.74,0,1,1,1,0,0,False,0,0
+P2/Mini,V100_P2_MINI_I05_R02,443c4e71b2bf42d6908fa425d51e3fd6,custom,1,0,0,0,0.0,0,0,0,0,0,0,False,0,0
+P2/Mini,V100_P2_MINI_I05_R02,443c4e71b2bf42d6908fa425d51e3fd6_iteration2,native,90,45,45,45,16.67,0,1,3,5,0,0,False,0,0
+P2/Mini,V100_P2_MINI_I05_R02,443c4e71b2bf42d6908fa425d51e3fd6_iteration2,custom,270,135,45,45,16.67,90,1,3,5,0,0,False,0,0
+P2/Mini,V100_P2_MINI_I05_R02,443c4e71b2bf42d6908fa425d51e3fd6_seed,native,2,2,2,2,0.74,0,1,1,1,0,0,False,0,0
+P2/Mini,V100_P2_MINI_I05_R02,443c4e71b2bf42d6908fa425d51e3fd6_seed,custom,1,0,0,0,0.0,0,0,0,0,0,0,False,0,0
+P2/Mini,V100_P2_MINI_I05_R03,bb6016818975478f843b11195c1d1b9b,native,2,2,2,2,0.74,0,1,1,1,0,0,False,0,0
+P2/Mini,V100_P2_MINI_I05_R03,bb6016818975478f843b11195c1d1b9b_seed,native,2,2,2,2,0.74,0,1,1,1,0,0,False,0,0
+P2/Mini,V100_P2_MINI_I05_R04,a7da6e331d104fd5a77a095434658fdf_iteration1,native,2,2,2,2,0.74,0,1,1,1,0,0,False,0,0
+P3/Mini,V100_P3_MINI_I05_R02,21d81ee94fc0419f9687e959c418ccc7_iteration2,custom,3675,3675,90,90,33.33,3585,1,3,5,0,90,False,0,0
+P3/Mini,V100_P3_MINI_I05_R03,9deb4fdf484e455888958bc45494ca3e,custom,30,30,30,30,11.11,0,1,1,5,0,0,False,30,0
+P3/Mini,V100_P3_MINI_I05_R03,bec301fec1e94c25bda958dc1c61cd57,custom,30,30,30,30,11.11,0,1,1,5,0,0,False,30,0
+P3/Mini,V100_P3_MINI_I05_R04,616618e2fb024188b5f926ea8eb4f527,custom,30,30,30,30,11.11,0,1,1,5,0,0,False,0,0
+P3/Mini,V100_P3_MINI_I05_R05,222e3861e0cf4780b8cb2c5773309b0d,custom,30,30,30,30,11.11,0,1,1,5,0,0,False,0,0

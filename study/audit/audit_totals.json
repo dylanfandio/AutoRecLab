@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-07-21T19:49:07",
+  "files": 2810,
+  "bytes": 50973979241,
+  "runs": 26,
+  "csv_files": 264,
+  "json_files": 450,
+  "generated_code_files": 237,
+  "duplicate_groups": 168,
+  "duplicate_copies": 673,
+  "duplicate_bytes_reclaimable": 2198570153,
+  "extensions": {
+    ".log": 449,
+    ".py": 241,
+    ".pkl": 260,
+    ".png": 444,
+    ".json": 450,
+    ".toml": 52,
+    ".csv": 264,
+    ".txt": 286,
+    ".md": 22,
+    ".pdf": 69,
+    ".svg": 69,
+    ".bpk": 195,
+    ".rsds": 7,
+    ".zip": 1,
+    ".data": 1
+  }
+}

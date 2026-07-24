@@ -1,0 +1,4 @@
+condition,run,node,path,corrupt,claimed_coverage,denominator,failed_checks,moved_denominator,self_passed
+P3/Mini,V100_P3_MINI_I05_R03,9deb4fdf484e455888958bc45494ca3e,V100_P3_MINI_I05_R03/checkpoint/9deb4fdf484e455888958bc45494ca3e/generated/results/validation_report.json,False,30/30,30,0,True,True
+P3/Mini,V100_P3_MINI_I05_R03,bec301fec1e94c25bda958dc1c61cd57,V100_P3_MINI_I05_R03/checkpoint/bec301fec1e94c25bda958dc1c61cd57/generated/prototype_pilot/validation.json,False,30/270,270,0,False,True
+P3/Mini,V100_P3_MINI_I05_R04,616618e2fb024188b5f926ea8eb4f527,V100_P3_MINI_I05_R04/checkpoint/616618e2fb024188b5f926ea8eb4f527/generated/validation_report.json,True,,,,,

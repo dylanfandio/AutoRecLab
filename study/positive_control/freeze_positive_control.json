@@ -1,0 +1,435 @@
+{
+  "frozen_at": "2026-07-24T04:42:12.219971+00:00",
+  "git_commit": "ff5f89870e8e7ba7211e62f994a6bfb5f389012d",
+  "description": "Human-authored positive control. Frozen before the preregistered native-path runs. Do not modify these artifacts.",
+  "file_count": 85,
+  "total_bytes": 178962047,
+  "files": [
+    {
+      "path": "FINDINGS.md",
+      "bytes": 13958,
+      "sha256": "5d65fe0c0867f896a497fa9105903e5b1be789984a19fe7386e42ee0dfebb926"
+    },
+    {
+      "path": "out/canon/AmazonVideoGames.csv",
+      "bytes": 71763788,
+      "sha256": "36a9448a24363e5d0bc21204b6a97210bb10541a7b1906fb2b7cdce7357a5813"
+    },
+    {
+      "path": "out/canon/HetrecLastFM.csv",
+      "bytes": 1856834,
+      "sha256": "d5d79b81c956ff581fdb09481384dcddbc3d10e903c5f5bafc4753227ebfc261"
+    },
+    {
+      "path": "out/canon/MovieLens100K.csv",
+      "bytes": 2070674,
+      "sha256": "8866fdf7f3e264872373f1ceb9b1fa5dbd5529b02fc990c7161f4de0757d2dbb"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__ALS__seed42.json",
+      "bytes": 1135,
+      "sha256": "750cc2abf7af4f57c334bf97a1f53a31090fe6a149b6fadafe04d4dbfddff6f6"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__ALS__seed43.json",
+      "bytes": 1127,
+      "sha256": "d26a7de026600bbf27a7c02416f1e97a2306d6cd375657bf9f413d0d2d06836c"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__ALS__seed44.json",
+      "bytes": 1128,
+      "sha256": "34ca43a590673d994760fd1444a3bbae2f772426ba608787ceaee7d4b67377b5"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__ALS__seed45.json",
+      "bytes": 1130,
+      "sha256": "3122706627887ead2999e737ecfde378d250cf83a9d352305236129403c2c6f9"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__ALS__seed46.json",
+      "bytes": 1136,
+      "sha256": "90f6a550557122d283fa889e4fa75c479a0f798d6cb05bfcffc2002fa6fec80b"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__ItemKNN__seed42.json",
+      "bytes": 1107,
+      "sha256": "000af61e421d3fcf51c64a70920ef9ffd6d2886a8d201a729ebf690d22e6a67b"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__ItemKNN__seed43.json",
+      "bytes": 1115,
+      "sha256": "fd3af42e4fe48db5ad8ff3041270fd6afd86d7e224a6462afbd0d5649c94fa2e"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__ItemKNN__seed44.json",
+      "bytes": 1111,
+      "sha256": "eea86ce9fd5405ea02178b3ac3effa9b8f40e73478cab46e8c0f2502291785f0"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__ItemKNN__seed45.json",
+      "bytes": 1109,
+      "sha256": "94632627f485a64802215009059e5e16733437fb0e77618f163c605bc8cb8940"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__ItemKNN__seed46.json",
+      "bytes": 1114,
+      "sha256": "22c70beba48a01d71f43f43684e9a7a83852bf012275307f9cc0e649aee0fb78"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__Pop__seed42.json",
+      "bytes": 1010,
+      "sha256": "db8a6f9a723bad8ed9e9ae373aae01a12a5cab722584e2e57e71fa1ae6321a5a"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__Pop__seed43.json",
+      "bytes": 1006,
+      "sha256": "92d65a913c90508b223214b29d5b10f4c5f9fd4d881c95845da2a0c63c4782d3"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__Pop__seed44.json",
+      "bytes": 1009,
+      "sha256": "a2572b211f7e4508e7fc1d6699c239ebcb4daa14c1516963d9cc6a474345bcdc"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__Pop__seed45.json",
+      "bytes": 1006,
+      "sha256": "7f73d58929e92780d704dba5164ba2a838e307cc4cd7cab9b839d21343747390"
+    },
+    {
+      "path": "out/cells/AmazonVideoGames__Pop__seed46.json",
+      "bytes": 1004,
+      "sha256": "e75cb59331f0675a6ba9c1bc7102b82a4d4a6b1cd36b496f3086dcb50ad6e05f"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__ALS__seed42.json",
+      "bytes": 1128,
+      "sha256": "ddeb53e82904ea47822209ae355401c06028a0e85b7599c6bad2fa91b995dc05"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__ALS__seed43.json",
+      "bytes": 1125,
+      "sha256": "0faab640b6f372373be25da318e9928fcfb30b480ff605456e25e6e3720ea271"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__ALS__seed44.json",
+      "bytes": 1125,
+      "sha256": "56282951b4e5cd793f110f2269180594b2886464fa6ddc1f2709001c7a158a9c"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__ALS__seed45.json",
+      "bytes": 1122,
+      "sha256": "889ff22357c0a9649392f5cdc8c5bff42f8d5923516a8a1c6948745949a4ff12"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__ALS__seed46.json",
+      "bytes": 1125,
+      "sha256": "e9c209b215289ca159704cd18780b118bc1db1005d45081cf98af59937aab20d"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__ItemKNN__seed42.json",
+      "bytes": 1101,
+      "sha256": "fd88549b6d66ddee27aa7c9ef782b25919b90858a9e50618a17f9633d4f9f8eb"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__ItemKNN__seed43.json",
+      "bytes": 1107,
+      "sha256": "932ba052baef3e1fad86968b5a04eafeb31220f7657863f3d615f4675b6c0080"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__ItemKNN__seed44.json",
+      "bytes": 1109,
+      "sha256": "08c066895e7d740d4a4eb7df8f89ebc63a8c2d182e2be4444b1e92f81c63f173"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__ItemKNN__seed45.json",
+      "bytes": 1103,
+      "sha256": "08aed15c65ecfe181a0ee6d3243f1fa6e001d94279fa63d82669a3b32b513887"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__ItemKNN__seed46.json",
+      "bytes": 1111,
+      "sha256": "4542ec04d6d63add0f8d45ac2de90113f2363271b0d317c6c34e1973e46c4fd7"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__Pop__seed42.json",
+      "bytes": 988,
+      "sha256": "aac1ebf0873ac8c6e08b3457f534c89506dc2ebb8c6aa2e7a68e0b59a917b157"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__Pop__seed43.json",
+      "bytes": 999,
+      "sha256": "c70f1d14b0cdd6c303d15ca98860a3233daf5644c8f7a0ca6928e5bdc637684a"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__Pop__seed44.json",
+      "bytes": 994,
+      "sha256": "edf30cf87d91ea6ba333bb67bedf6bbb202f5f53109d74ef9d6a326ba830580f"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__Pop__seed45.json",
+      "bytes": 1002,
+      "sha256": "5ece9d8ea371384e0d310162b45359d4a4454136c4288fe670505ed3fe6244eb"
+    },
+    {
+      "path": "out/cells/HetrecLastFM__Pop__seed46.json",
+      "bytes": 994,
+      "sha256": "40aceb6722347ee9a32fdd3ddf3822a15b2a3db50e18d90293155c553770879b"
+    },
+    {
+      "path": "out/cells/MovieLens100K__ALS__seed42.json",
+      "bytes": 1125,
+      "sha256": "0ca88f5dab95df50ca070f45b75b533aee219e60b2525ef1786e7dbf7f707034"
+    },
+    {
+      "path": "out/cells/MovieLens100K__ALS__seed43.json",
+      "bytes": 1117,
+      "sha256": "ae45639993e1b59c8b98c4860f6bed3dbcc5db8b8a2fa8f11eeb0a9af3dae23a"
+    },
+    {
+      "path": "out/cells/MovieLens100K__ALS__seed44.json",
+      "bytes": 1123,
+      "sha256": "9c7baa7a9c488ec3e5dd467b293a07dcf47bb6a8d2706623a6e075d3f722a8ad"
+    },
+    {
+      "path": "out/cells/MovieLens100K__ALS__seed45.json",
+      "bytes": 1119,
+      "sha256": "dfa15410941cc83798bad2e1d6582249a591a0520d2fd84c5041b000da70fc5a"
+    },
+    {
+      "path": "out/cells/MovieLens100K__ALS__seed46.json",
+      "bytes": 1120,
+      "sha256": "2314f97c600bc91479396c70f4c5239dcaf46a7c359a33666f128524bcbab3fb"
+    },
+    {
+      "path": "out/cells/MovieLens100K__ItemKNN__seed42.json",
+      "bytes": 1112,
+      "sha256": "0650c6197c298d3cd58a1ed6778ad09da90a1cd8c820c9807df8250b02e29f20"
+    },
+    {
+      "path": "out/cells/MovieLens100K__ItemKNN__seed43.json",
+      "bytes": 1110,
+      "sha256": "02c6832e20062ca21ec1b0dfcd3067a1045e55580f124b1641c9f5edb354e5cc"
+    },
+    {
+      "path": "out/cells/MovieLens100K__ItemKNN__seed44.json",
+      "bytes": 1111,
+      "sha256": "fbcbbb794a0a666054f59690272d5ddd9192c7eb023ad78397a69bed4a32ebfe"
+    },
+    {
+      "path": "out/cells/MovieLens100K__ItemKNN__seed45.json",
+      "bytes": 1109,
+      "sha256": "cd81b39c1d0b5379d524706a86b76159d9b9863cac600af19832d903f98a32fb"
+    },
+    {
+      "path": "out/cells/MovieLens100K__ItemKNN__seed46.json",
+      "bytes": 1101,
+      "sha256": "458a9258f154df70c004510b4434857fa53f02ce4f42f480c4770a5177b8e02e"
+    },
+    {
+      "path": "out/cells/MovieLens100K__Pop__seed42.json",
+      "bytes": 996,
+      "sha256": "ec96f23565bb59e1d8a8949c3be227d62445cc149f47ea26912aa12e1a8e5711"
+    },
+    {
+      "path": "out/cells/MovieLens100K__Pop__seed43.json",
+      "bytes": 991,
+      "sha256": "1f8fdc636e3b3e8d34e52eb9c0dd40a96849a34ba7112eec0b464e6518775de6"
+    },
+    {
+      "path": "out/cells/MovieLens100K__Pop__seed44.json",
+      "bytes": 996,
+      "sha256": "53321c459a17b2ead1232166b629b82025f5b2ba80bbf635ec0f6756df3c3876"
+    },
+    {
+      "path": "out/cells/MovieLens100K__Pop__seed45.json",
+      "bytes": 995,
+      "sha256": "e996284dcbbc280fb3196defa378ee5f048f72713e04932b34aee2af5544598c"
+    },
+    {
+      "path": "out/cells/MovieLens100K__Pop__seed46.json",
+      "bytes": 997,
+      "sha256": "114c0b4e7dd3c753cf27ccc8e8bd5523e7cf22f26b761a2b1493a426970f692f"
+    },
+    {
+      "path": "out/environment.json",
+      "bytes": 7183,
+      "sha256": "79b424608ff142cb3ab01c511d34c7a0998fb8fa13c478653cd687f82cfde0a8"
+    },
+    {
+      "path": "out/metrics.csv",
+      "bytes": 34275,
+      "sha256": "0630ac5494847febbca22b9e0a33483d8ec2d5e618b08d7aa0cc512b77840a98"
+    },
+    {
+      "path": "out/preprocessing_counts.csv",
+      "bytes": 1854,
+      "sha256": "388dd8176179b0822666ede72d39bb30ad39fa604fb580ffa1109c7b2dbf375e"
+    },
+    {
+      "path": "out/resources.csv",
+      "bytes": 4689,
+      "sha256": "eafcdfbc3d80eee290c7361d297df85fc30da30d2d0d8b74011ee5bf8b5f1fc0"
+    },
+    {
+      "path": "out/split_counts.csv",
+      "bytes": 1229,
+      "sha256": "48d75770e4fa4d6bebab797e2ad9a81fa320d7d34831b6ac4df04fc4572d749a"
+    },
+    {
+      "path": "out/tier_a/checkpoints/HetrecLastFM/seed42/err.log",
+      "bytes": 3709,
+      "sha256": "c21884b293a92b5ef821620cd0af45f37b1cf1c8aa5ec72532d7ba76e7178fc7"
+    },
+    {
+      "path": "out/tier_a/checkpoints/HetrecLastFM/seed42/HetrecLastFM_seed42-63ee00bb/LensKit.ImplicitMFScorer-f0dd7ecb-42/model.bpk",
+      "bytes": 2046438,
+      "sha256": "d66283c1597216f9371760e27f0c2d0f52b7aa21fd907cf9cdecfd3982ec752a"
+    },
+    {
+      "path": "out/tier_a/checkpoints/HetrecLastFM/seed42/HetrecLastFM_seed42-63ee00bb/LensKit.ImplicitMFScorer-f0dd7ecb-42/predictions.json",
+      "bytes": 508582,
+      "sha256": "2219f240fd3e10070af99253ab5dbb403e7e2a6f7d3f8ca66c1841e3cd574a02"
+    },
+    {
+      "path": "out/tier_a/checkpoints/HetrecLastFM/seed42/HetrecLastFM_seed42-63ee00bb/LensKit.ItemKNNScorer-c3d66610-42/model.bpk",
+      "bytes": 218527,
+      "sha256": "9c297b26ff06c576f1eab2e0c36bdfd7c385ececa9ff8d80c7252316bbbb5f87"
+    },
+    {
+      "path": "out/tier_a/checkpoints/HetrecLastFM/seed42/HetrecLastFM_seed42-63ee00bb/LensKit.ItemKNNScorer-c3d66610-42/predictions.json",
+      "bytes": 339104,
+      "sha256": "658cac5b692f7f8af194af5ca430b5b06eb10e4e8761c024ce2d4dadecd991d1"
+    },
+    {
+      "path": "out/tier_a/checkpoints/HetrecLastFM/seed42/HetrecLastFM_seed42-63ee00bb/LensKit.PopScorer-f4aa5539-42/model.bpk",
+      "bytes": 251696,
+      "sha256": "76bd7a09373430edba2345aa41910c9dbf1bf3b49e8a0d426bc12068896bc49a"
+    },
+    {
+      "path": "out/tier_a/checkpoints/HetrecLastFM/seed42/HetrecLastFM_seed42-63ee00bb/LensKit.PopScorer-f4aa5539-42/predictions.json",
+      "bytes": 506602,
+      "sha256": "55715e96558b6815df442b826dada8d03db9ca9d62f9ce886949eeeba6610465"
+    },
+    {
+      "path": "out/tier_a/checkpoints/HetrecLastFM/seed42/out.log",
+      "bytes": 122,
+      "sha256": "d5dfd1b41ff23d2a7de4168e3097a4542f0a7190b14059080b9930eb515fd3f2"
+    },
+    {
+      "path": "out/tier_a/checkpoints/HetrecLastFM/seed42/progress.json",
+      "bytes": 555,
+      "sha256": "0b8ad80d620a0f72122fc77a22e684a2d3da365ae2366864ee69a26241086ad3"
+    },
+    {
+      "path": "out/tier_a/checkpoints/HetrecLastFM/seed42/results.json",
+      "bytes": 2,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "path": "out/tier_a/checkpoints/MovieLens100K/seed42/err.log",
+      "bytes": 3341,
+      "sha256": "886cfe0165eb1324b0fb957166b243f15f998347fa90189ff16eb7b10ef110eb"
+    },
+    {
+      "path": "out/tier_a/checkpoints/MovieLens100K/seed42/MovieLens100K_seed42-eff9ee63/LensKit.ImplicitMFScorer-f0dd7ecb-42/model.bpk",
+      "bytes": 1021759,
+      "sha256": "3b8e482d7e742d3dfda67918c12f8c243e76ed6df780039f4ed2ce23f615f08d"
+    },
+    {
+      "path": "out/tier_a/checkpoints/MovieLens100K/seed42/MovieLens100K_seed42-eff9ee63/LensKit.ImplicitMFScorer-f0dd7ecb-42/predictions.json",
+      "bytes": 32485665,
+      "sha256": "9781f3c4e930d80c39a643956f2877ee03225a3303efa8c0e3a2bfd598954fca"
+    },
+    {
+      "path": "out/tier_a/checkpoints/MovieLens100K/seed42/MovieLens100K_seed42-eff9ee63/LensKit.ItemKNNScorer-c3d66610-42/model.bpk",
+      "bytes": 2090059,
+      "sha256": "96f81eed20b586d793e5fd57ba765ada593041717a3c8b2120f6d0a1bc610de0"
+    },
+    {
+      "path": "out/tier_a/checkpoints/MovieLens100K/seed42/MovieLens100K_seed42-eff9ee63/LensKit.ItemKNNScorer-c3d66610-42/predictions.json",
+      "bytes": 31065606,
+      "sha256": "114610147dce13298ffa630bfde795202454f3c0c85fdf6a47c312e42c4c0170"
+    },
+    {
+      "path": "out/tier_a/checkpoints/MovieLens100K/seed42/MovieLens100K_seed42-eff9ee63/LensKit.PopScorer-f4aa5539-42/model.bpk",
+      "bytes": 276895,
+      "sha256": "fb812f77ee24c5d6f6ceafe5eb97c12c337f93a861e6aec04033e74b1da4a852"
+    },
+    {
+      "path": "out/tier_a/checkpoints/MovieLens100K/seed42/MovieLens100K_seed42-eff9ee63/LensKit.PopScorer-f4aa5539-42/predictions.json",
+      "bytes": 32250619,
+      "sha256": "4b72ea4a7e55a18141c0b27679f78453ebb0ae138a59d959410fb80330e4c7ab"
+    },
+    {
+      "path": "out/tier_a/checkpoints/MovieLens100K/seed42/out.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "out/tier_a/checkpoints/MovieLens100K/seed42/progress.json",
+      "bytes": 558,
+      "sha256": "c5a67da249d1bb7154cc7b2e1b77682479dfae63ce588989ef0e01e0570b1a45"
+    },
+    {
+      "path": "out/tier_a/checkpoints/MovieLens100K/seed42/results.json",
+      "bytes": 2237,
+      "sha256": "a430229061ebf454246e85e5e01e8d947232ff2a0f5ed64a86af098e582a67fc"
+    },
+    {
+      "path": "out/tier_a/tier_a_metrics.csv",
+      "bytes": 2083,
+      "sha256": "037af9a95be4e995271bee517c5e96350f5556a50890091a32cefb2846e1c522"
+    },
+    {
+      "path": "out/tier_a/tier_a_results.json",
+      "bytes": 7896,
+      "sha256": "9142afa0d205c03ed32c5d3b5d7bf9490a660900abaa19cce347e4f3167feb3e"
+    },
+    {
+      "path": "out/tier_a_run.log",
+      "bytes": 405,
+      "sha256": "97575d75e2527283122e81ff7520f21e31dc6872694f6b075d72b8be894563d5"
+    },
+    {
+      "path": "out/tier_b_run.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "out/validation_report.json",
+      "bytes": 9416,
+      "sha256": "d28d0732beb750cc088aec7c7c92f102c565336f9f73572b79763e2ffa4f1110"
+    },
+    {
+      "path": "out/validation_report.md",
+      "bytes": 5416,
+      "sha256": "8e67e0af2c59066099a4174aef76f1aca81b14e0b2e0a1c371eed7433de7f2e2"
+    },
+    {
+      "path": "pc_common.py",
+      "bytes": 17225,
+      "sha256": "fcc2bcd85213e82aa5f5156603c34b5431ea4c40810b5cbb32f02a5b76b372dc"
+    },
+    {
+      "path": "pc_tier_a.py",
+      "bytes": 9676,
+      "sha256": "cd850bde5b881fe8cff67758bc41707c446e054f3008a1540f37c763873e68c9"
+    },
+    {
+      "path": "pc_tier_b.py",
+      "bytes": 11137,
+      "sha256": "d745b174f7066e9182d42d3e30d2c601fceefecdaabf06dde83fcdca1491b1e9"
+    },
+    {
+      "path": "pc_validate.py",
+      "bytes": 19072,
+      "sha256": "4abba9ca67115db7b61a08e94a0bcb1316fc175c035c69d3df9ad69be21f49b5"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4659,
+      "sha256": "a516b79344a70f80e21703053e579e7f0fe111201cec51816ffa90fedb4a6b11"
+    }
+  ],
+  "rollup_sha256": "4b7cb783b84fac001706e1acf35d905c8e15b8c1b37a540b5f0ee28673d4a727"
+}

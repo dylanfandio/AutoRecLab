@@ -1,0 +1,1 @@
+{"MovieLens100K-ef525a25": [{"algorithm": "LensKit.PopScorer-f4aa5539-7", "fold": null, "name": "NDCG", "k": 10, "value": 0.17023035757720048}, {"algorithm": "LensKit.PopScorer-f4aa5539-7", "fold": null, "name": "Precision", "k": 10, "value": 0.1537645811240721}]}

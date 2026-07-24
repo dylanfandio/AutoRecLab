@@ -1,0 +1,1 @@
+{"MovieLens100K-69314d4c": [{"algorithm": "LensKit.ImplicitMFScorer-f0dd7ecb-42", "fold": null, "name": "NDCG", "k": 10, "value": 0.19813894474495342}, {"algorithm": "LensKit.ImplicitMFScorer-f0dd7ecb-42", "fold": null, "name": "Precision", "k": 10, "value": 0.18981972428419935}]}

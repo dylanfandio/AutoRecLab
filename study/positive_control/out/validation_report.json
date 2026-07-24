@@ -1,0 +1,287 @@
+{
+  "entries_present": 270,
+  "entries_expected": 270,
+  "coverage": "270/270",
+  "checks_total": 46,
+  "checks_passed": 45,
+  "semantic_violations": 0,
+  "warnings": 1,
+  "checks": [
+    {
+      "check": "expected matrix size is 270",
+      "status": "pass",
+      "severity": "",
+      "detail": "3 datasets x 3 algorithms x 5 seeds x 3 cutoffs x 2 metrics = 270"
+    },
+    {
+      "check": "all 270 requested entries present",
+      "status": "pass",
+      "severity": "",
+      "detail": "270/270 present"
+    },
+    {
+      "check": "no unrequested entries",
+      "status": "pass",
+      "severity": "",
+      "detail": "0 unexpected keys"
+    },
+    {
+      "check": "no duplicate entries",
+      "status": "pass",
+      "severity": "",
+      "detail": "0 duplicated keys"
+    },
+    {
+      "check": "exactly five distinct seeds",
+      "status": "pass",
+      "severity": "",
+      "detail": "seeds present: [42, 43, 44, 45, 46]; declared: [42, 43, 44, 45, 46]"
+    },
+    {
+      "check": "seeds produce different results",
+      "status": "pass",
+      "severity": "",
+      "detail": "all dataset/algorithm pairs vary across seeds"
+    },
+    {
+      "check": "all metric values within [0, 1]",
+      "status": "pass",
+      "severity": "",
+      "detail": "0 out-of-range values"
+    },
+    {
+      "check": "no NaN metric values",
+      "status": "pass",
+      "severity": "",
+      "detail": "0 NaN values"
+    },
+    {
+      "check": "no all-zero result blocks",
+      "status": "pass",
+      "severity": "",
+      "detail": "none"
+    },
+    {
+      "check": "each algorithm label maps to one class",
+      "status": "pass",
+      "severity": "",
+      "detail": "{'ALS': ['lenskit.als._implicit.ImplicitMFScorer'], 'ItemKNN': ['lenskit.knn.item.ItemKNNScorer'], 'Pop': ['lenskit.basic.popularity.PopScorer']}"
+    },
+    {
+      "check": "three distinct algorithm classes",
+      "status": "pass",
+      "severity": "",
+      "detail": "3 distinct classes: ['lenskit.als._implicit.ImplicitMFScorer', 'lenskit.basic.popularity.PopScorer', 'lenskit.knn.item.ItemKNNScorer']"
+    },
+    {
+      "check": "algorithms produce distinct results",
+      "status": "pass",
+      "severity": "",
+      "detail": "no two algorithms share an identical metric vector"
+    },
+    {
+      "check": "nDCG@1 == Precision@1 (binary relevance identity)",
+      "status": "pass",
+      "severity": "",
+      "detail": "max absolute difference 0.000e+00"
+    },
+    {
+      "check": "Precision does not increase from k=1 to k=10",
+      "status": "WARN",
+      "severity": "warning",
+      "detail": "1 cells rise: [\"('HetrecLastFM', 'Pop', 42)\"]"
+    },
+    {
+      "check": "MovieLens100K: interactions_raw matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=100000 independent=100000"
+    },
+    {
+      "check": "MovieLens100K: interactions_after_dedup matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=100000 independent=100000"
+    },
+    {
+      "check": "MovieLens100K: interactions_after_threshold matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=55375 independent=55375"
+    },
+    {
+      "check": "MovieLens100K: interactions_after_core matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=54413 independent=54413"
+    },
+    {
+      "check": "MovieLens100K: users_after_core matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=938 independent=938"
+    },
+    {
+      "check": "MovieLens100K: items_after_core matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=1008 independent=1008"
+    },
+    {
+      "check": "MovieLens100K: 5-core actually satisfied",
+      "status": "pass",
+      "severity": "",
+      "detail": "min user interactions=5, min item interactions=5"
+    },
+    {
+      "check": "MovieLens100K: implicit rule is 'rating > 3', not 'rating >= 3'",
+      "status": "pass",
+      "severity": "",
+      "detail": "MakeImplicit(4) keeps rating >= 4, i.e. rating > 3"
+    },
+    {
+      "check": "AmazonVideoGames: interactions_raw matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=2565349 independent=2565349"
+    },
+    {
+      "check": "AmazonVideoGames: interactions_after_dedup matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=2489395 independent=2489395"
+    },
+    {
+      "check": "AmazonVideoGames: interactions_after_threshold matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=1844699 independent=1844699"
+    },
+    {
+      "check": "AmazonVideoGames: interactions_after_core matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=291945 independent=291945"
+    },
+    {
+      "check": "AmazonVideoGames: users_after_core matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=33621 independent=33621"
+    },
+    {
+      "check": "AmazonVideoGames: items_after_core matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=12455 independent=12455"
+    },
+    {
+      "check": "AmazonVideoGames: 5-core actually satisfied",
+      "status": "pass",
+      "severity": "",
+      "detail": "min user interactions=5, min item interactions=5"
+    },
+    {
+      "check": "AmazonVideoGames: implicit rule is 'rating > 3', not 'rating >= 3'",
+      "status": "pass",
+      "severity": "",
+      "detail": "MakeImplicit(4) keeps rating >= 4, i.e. rating > 3"
+    },
+    {
+      "check": "HetrecLastFM: interactions_raw matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=186479 independent=186479"
+    },
+    {
+      "check": "HetrecLastFM: interactions_after_dedup matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=71064 independent=71064"
+    },
+    {
+      "check": "HetrecLastFM: interactions_after_threshold matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=71064 independent=71064"
+    },
+    {
+      "check": "HetrecLastFM: interactions_after_core matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=52551 independent=52551"
+    },
+    {
+      "check": "HetrecLastFM: users_after_core matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=1090 independent=1090"
+    },
+    {
+      "check": "HetrecLastFM: items_after_core matches independent recomputation",
+      "status": "pass",
+      "severity": "",
+      "detail": "pipeline=3646 independent=3646"
+    },
+    {
+      "check": "HetrecLastFM: 5-core actually satisfied",
+      "status": "pass",
+      "severity": "",
+      "detail": "min user interactions=5, min item interactions=5"
+    },
+    {
+      "check": "split counts recorded for every dataset and seed",
+      "status": "pass",
+      "severity": "",
+      "detail": "15 rows, expected 15"
+    },
+    {
+      "check": "every user's holdout is ceil(0.2 x interactions), verified independently",
+      "status": "pass",
+      "severity": "",
+      "detail": "per-user 80/20 rule holds for all users in all splits"
+    },
+    {
+      "check": "realised aggregate test fraction reported, not silently reshaped",
+      "status": "pass",
+      "severity": "",
+      "detail": "per-user integer rounding puts the aggregate above 20%: MovieLens100K=0.2068, AmazonVideoGames=0.2410, HetrecLastFM=0.2084 (Amazon is highest because 32% of its users have exactly 5 interactions after 5-core filtering)"
+    },
+    {
+      "check": "no validation partition was created",
+      "status": "pass",
+      "severity": "",
+      "detail": "all splits are train/test only, as requested"
+    },
+    {
+      "check": "train + test accounts for every post-filtering interaction",
+      "status": "pass",
+      "severity": "",
+      "detail": "no interactions lost or duplicated by splitting"
+    },
+    {
+      "check": "runtime and peak memory recorded for every cell",
+      "status": "pass",
+      "severity": "",
+      "detail": "45 rows, expected 45"
+    },
+    {
+      "check": "all recorded runtimes are positive",
+      "status": "pass",
+      "severity": "",
+      "detail": "min 21.829s, max 168.1s"
+    },
+    {
+      "check": "environment fingerprint captured",
+      "status": "pass",
+      "severity": "",
+      "detail": "lenskit 2025.6.2, 160 packages pinned, git ff5f89870e8e"
+    },
+    {
+      "check": "requested LensKit 0.14.4 documented as unavailable",
+      "status": "pass",
+      "severity": "",
+      "detail": "0.14.4 (requested by P0_original.txt; not installable in this stack and not present in any environment)"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+condition,runs,total_api_calls,total_cost_usd,mean_cost_usd,mean_best_reviewer_score_pct,runs_with_satisfactory_node,total_generated_code_files,total_prediction_files,total_results_json_files,runs_ended_without_satisfaction,total_traceback_count
+P2/Mini,5,820,5.5824,1.1165,21.949,0,50,30,8,5,80
+P3/Mini,5,803,6.3402,1.268,12.121,0,50,0,0,5,52

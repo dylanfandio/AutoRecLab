@@ -1,0 +1,59 @@
+{
+  "coverage": "30/30",
+  "failed_checks": 0,
+  "validation": {
+    "A_completeness": {
+      "pass": true,
+      "detail": "rows=30 expected=30"
+    },
+    "B_finiteness_range": {
+      "pass": true,
+      "detail": "all values finite in [0,1]"
+    },
+    "C_non_degenerate": {
+      "pass": true,
+      "detail": "non-zero results obtained"
+    },
+    "D_metric_identity": {
+      "pass": true,
+      "detail": "nDCG@1 matches Precision@1"
+    },
+    "E_seed_effect": {
+      "pass": true,
+      "detail": "nDCG@10 seed values=[0.15342999244335376, 0.15563530218907146, 0.15267306539490258, 0.15261746034457918, 0.15644872175250907]"
+    },
+    "F_counts_recorded": {
+      "pass": true,
+      "detail": "raw=100000, implicit=55375, 5core=54413, train_counts={7: 43536, 13: 43536, 29: 43536, 42: 43536, 87: 43536}, test_counts={7: 10877, 13: 10877, 29: 10877, 42: 10877, 87: 10877}"
+    }
+  },
+  "package_versions": {
+    "omnirec": "1.0.0",
+    "lenskit": "2025.6.2",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.7"
+  },
+  "algorithm_class": "LensKit.ImplicitMFScorer",
+  "dataset_counts": {
+    "raw": 100000,
+    "implicit": 55375,
+    "five_core": 54413
+  },
+  "seed_counts": {
+    "train": {
+      "7": 43536,
+      "13": 43536,
+      "29": 43536,
+      "42": 43536,
+      "87": 43536
+    },
+    "test": {
+      "7": 10877,
+      "13": 10877,
+      "29": 10877,
+      "42": 10877,
+      "87": 10877
+    }
+  }
+}

@@ -1,0 +1,30 @@
+Please run a reproducible recommender-systems experiment using the recommender-system software already installed in this AutoRecLab v1.0.0 environment. Do not require or install LensKit 0.14.4. Record the detected package versions and the exact algorithm classes used.
+
+Evaluate these three algorithms:
+
+* ALS for implicit feedback
+* ItemKNN
+* MostPopular
+
+Use these exact local dataset files from `../../../study/data/`:
+
+* MovieLens100K: `u.data`
+* Amazon Video Games: `VideoGames.csv`
+* Last.FM: `UserTaggedArtiststimestamps.dat`
+
+Use the existing local files and do not attempt to download replacements. Inspect and map each raw file according to its actual schema.
+
+For MovieLens100K and Amazon Video Games, retain ratings greater than 3 and convert them to implicit interactions. Treat the Last.FM tagging events directly as implicit interactions; do not apply a numeric rating threshold to Last.FM. Apply 5-core filtering to all three processed datasets.
+
+Use the fixed random seeds 7, 13, 29, 42, and 87. For every dataset, algorithm, and seed, perform a user-based 80/20 train/test holdout. Use only the 80% training and 20% test partitions; do not create a separate validation partition or pass a zero-sized validation split.
+
+Measure nDCG and Precision at k = 1, 5, and 10. Save a result row for every dataset, algorithm, seed, and cutoff. Persist completed results incrementally so that successfully completed combinations are retained if a later combination fails.
+
+Verify that all reported metrics are finite values computed from actual recommendations. Do not use placeholders, synthetic values, empty tables, or NaN values as successful results.
+
+Produce:
+
+1. A table containing dataset, algorithm, seed, cutoff, nDCG, and Precision.
+2. Mean, standard deviation, minimum, maximum, and range across the five seeds for every dataset–algorithm–cutoff combination.
+3. A short statistical analysis of how strongly the random split seed affects accuracy.
+4. The exact package versions, algorithm implementations, preprocessing counts, and train/test interaction counts needed to reproduce the experiment.

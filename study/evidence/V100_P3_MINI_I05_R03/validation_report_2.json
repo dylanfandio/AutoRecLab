@@ -1,0 +1,97 @@
+{
+  "coverage": "30/270",
+  "failed_checks": 0,
+  "checks": [
+    {
+      "check": "A completeness",
+      "pass": true,
+      "detail": "30 rows for prototype pilot"
+    },
+    {
+      "check": "B finiteness and range",
+      "pass": true,
+      "detail": "all metric values finite in [0,1]"
+    },
+    {
+      "check": "C seed variation",
+      "pass": true,
+      "detail": "seed variation observed in nDCG"
+    },
+    {
+      "check": "D metric identity",
+      "pass": true,
+      "detail": "prototype uses identical binary ranking logic for nDCG@1 and Precision@1"
+    }
+  ],
+  "versions": {
+    "omnirec": "unknown",
+    "lenskit": "2025.6.2",
+    "recbole": "not-installed",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "matplotlib": "3.10.7",
+    "python": "3.12.12"
+  },
+  "schema": {
+    "user_col": "user_id",
+    "item_col": "item_id",
+    "rating_col": "rating",
+    "time_col": "timestamp",
+    "columns": [
+      "user_id",
+      "item_id",
+      "rating",
+      "timestamp"
+    ]
+  },
+  "counts": {
+    "raw_interactions": 100000,
+    "after_implicit_threshold": 55375,
+    "after_5_core": 54413
+  },
+  "seed_counts": [
+    {
+      "dataset": "MovieLens100K",
+      "seed": 7,
+      "train_interactions": 43536,
+      "test_interactions": 10877,
+      "realized_test_fraction": 0.19989708341756565
+    },
+    {
+      "dataset": "MovieLens100K",
+      "seed": 13,
+      "train_interactions": 43536,
+      "test_interactions": 10877,
+      "realized_test_fraction": 0.19989708341756565
+    },
+    {
+      "dataset": "MovieLens100K",
+      "seed": 29,
+      "train_interactions": 43536,
+      "test_interactions": 10877,
+      "realized_test_fraction": 0.19989708341756565
+    },
+    {
+      "dataset": "MovieLens100K",
+      "seed": 42,
+      "train_interactions": 43536,
+      "test_interactions": 10877,
+      "realized_test_fraction": 0.19989708341756565
+    },
+    {
+      "dataset": "MovieLens100K",
+      "seed": 87,
+      "train_interactions": 43536,
+      "test_interactions": 10877,
+      "realized_test_fraction": 0.19989708341756565
+    }
+  ],
+  "random_state_after_run": 87,
+  "algorithm": {
+    "name": "MostPopular",
+    "class": "omnirec.runner.algos.LensKit.ItemKNNScorer",
+    "hyperparameters": {
+      "top_k": 10
+    }
+  }
+}

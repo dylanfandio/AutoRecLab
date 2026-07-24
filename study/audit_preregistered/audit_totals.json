@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-07-24T18:54:11",
+  "scope": "Preregistered native-path baseline (P2/Mini x5, P3/Mini x5)",
+  "note_on_confounds": "Wall-clock and peak memory are intentionally omitted from aggregates: several pairs ran concurrently and shared machine resources. API cost, artifact coverage, reviewer score, and completion markers are not affected by concurrency.",
+  "runs": 10,
+  "files": 964,
+  "bytes": 1247339116,
+  "csv_files": 35,
+  "json_files": 101,
+  "generated_code_files": 100,
+  "duplicate_groups": 38,
+  "duplicate_copies": 160,
+  "duplicate_bytes_reclaimable": 306810618,
+  "extensions": {
+    ".log": 168,
+    ".py": 100,
+    ".pkl": 110,
+    ".bpk": 30,
+    ".json": 101,
+    ".txt": 145,
+    ".toml": 20,
+    ".csv": 35,
+    ".png": 182,
+    ".md": 10,
+    ".pdf": 30,
+    ".svg": 30,
+    ".jsonl": 3
+  },
+  "condition_comparison": [
+    {
+      "condition": "P2/Mini",
+      "runs": 5,
+      "total_api_calls": 820,
+      "total_cost_usd": 5.5824,
+      "mean_cost_usd": 1.1165,
+      "mean_best_reviewer_score_pct": 21.949,
+      "runs_with_satisfactory_node": 0,
+      "total_generated_code_files": 50,
+      "total_prediction_files": 30,
+      "total_results_json_files": 8,
+      "runs_ended_without_satisfaction": 5,
+      "total_traceback_count": 80
+    },
+    {
+      "condition": "P3/Mini",
+      "runs": 5,
+      "total_api_calls": 803,
+      "total_cost_usd": 6.3402,
+      "mean_cost_usd": 1.268,
+      "mean_best_reviewer_score_pct": 12.121,
+      "runs_with_satisfactory_node": 0,
+      "total_generated_code_files": 50,
+      "total_prediction_files": 0,
+      "total_results_json_files": 0,
+      "runs_ended_without_satisfaction": 5,
+      "total_traceback_count": 52
+    }
+  ]
+}

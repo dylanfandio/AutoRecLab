@@ -1,0 +1,80 @@
+Please run a reproducible recommender-systems experiment using the recommender-system software already installed in this AutoRecLab v1.0.0 environment. Do not require or install LensKit 0.14.4. Record the detected package versions and the exact algorithm classes used.
+
+Evaluate these three algorithms:
+
+* ALS for implicit feedback
+* ItemKNN
+* MostPopular
+
+Use these exact local dataset files from `../../../study/data/`:
+
+* MovieLens100K: `u.data`
+* Amazon Video Games: `VideoGames.csv`
+* Last.FM: `UserTaggedArtiststimestamps.dat`
+
+Use the existing local files and do not attempt to download replacements. Inspect and map each raw file according to its actual schema.
+
+For MovieLens100K and Amazon Video Games, retain ratings greater than 3 and convert them to implicit interactions. Treat the Last.FM tagging events directly as implicit interactions; do not apply a numeric rating threshold to Last.FM. Apply 5-core filtering to all three processed datasets.
+
+Use the fixed random seeds 7, 13, 29, 42, and 87. For every dataset, algorithm, and seed, perform a user-based 80/20 train/test holdout. Use only the 80% training and 20% test partitions; do not create a separate validation partition or pass a zero-sized validation split.
+
+Measure nDCG and Precision at k = 1, 5, and 10. Save a result row for every dataset, algorithm, seed, and cutoff. Persist completed results incrementally so that successfully completed combinations are retained if a later combination fails.
+
+Verify that all reported metrics are finite values computed from actual recommendations. Do not use placeholders, synthetic values, empty tables, or NaN values as successful results.
+
+Produce:
+
+1. A table containing dataset, algorithm, seed, cutoff, nDCG, and Precision.
+2. Mean, standard deviation, minimum, maximum, and range across the five seeds for every dataset–algorithm–cutoff combination.
+3. A short statistical analysis of how strongly the random split seed affects accuracy.
+4. The exact package versions, algorithm implementations, preprocessing counts, and train/test interaction counts needed to reproduce the experiment.
+
+====================================================================
+ENVIRONMENT COMPATIBILITY CONTRACT
+====================================================================
+
+The following facts about this specific environment are known to be true. They are provided so you do not have to rediscover them. Treat each as a binding constraint, not a suggestion. Every one of them has caused a silent or fatal failure in this environment before.
+
+1. LensKit version. LensKit 0.14.4 is NOT installed and must NOT be installed. The installed stack provides a modern LensKit whose public API differs completely from 0.14.x (there is no `lenskit.algorithms` module). Detect the actually installed LensKit version at runtime and use its real API. Record the version and the fully-qualified class of each algorithm you instantiate.
+
+2. Train/test split. An 80/20 train/test holdout with NO validation partition is required. If the framework provides a user-holdout splitter that always removes a validation slice from the training set, do not use it for this task: a zero-sized validation split raises an error, and a non-zero one silently violates the requested proportions. Implement a per-user 80/20 split that yields only train and test partitions. Report the realized per-user test fraction; because interaction counts are integers, the aggregate fraction will be slightly above 20% and that is expected.
+
+3. Recommendation list length. Whenever you generate top-N recommendations, pass an explicit finite list length equal to the largest evaluation cutoff (k = 10). Do not request an unbounded recommendation that ranks every candidate item for every user: on Amazon Video Games that materializes hundreds of millions of rows and exhausts memory. Bounding the list to k = 10 is both correct for the metrics and feasible.
+
+4. Per-seed isolation. If the framework derives checkpoint or output directory names from dataset statistics such as split sizes, be aware that a per-user 80/20 holdout produces identical partition sizes for every seed. Give each seed its own distinct checkpoint/output location so that seeds cannot overwrite or silently resume one another. Confirm that the five seeds produce five genuinely different result sets.
+
+5. Reproducible training. Seed the model-training randomness as well as the data-split randomness, so that the variation you report across seeds reflects the data split and is reproducible on re-run.
+
+6. nDCG correctness. Use an nDCG whose ideal DCG is normalized over min(k, number of relevant items for the user). A perfect ranking must score exactly 1.0. An IDCG summed over the full k regardless of how many relevant items the user has will systematically understate nDCG and is incorrect. As a built-in check, note that nDCG@1 and Precision@1 are mathematically identical under binary relevance; if they differ, your metric implementation is wrong.
+
+7. Do not trust "no exception" as success. Some framework runners catch evaluation errors internally and return an empty result set without raising. After every dataset–algorithm–seed combination, assert that the expected number of result rows was actually produced and that each metric is a finite number computed from real recommendations. A run that finishes without error but yields empty or partial results is a failure, not a success.
+
+8. Last.FM feedback type. Feedback type may be inferred from the mere presence of a `rating` column. Last.FM is already implicit and may carry a constant rating value; if that column is present, a runner can misroute it to rating prediction, produce output without a ranking, and break ranking evaluation. Ensure Last.FM is handled as implicit top-N data (for example by dropping the constant rating column) so it is evaluated as a ranking task.
+
+====================================================================
+DETERMINISTIC VALIDATION AND OUTPUT CONTRACT
+====================================================================
+
+Before declaring the experiment successful, run the following deterministic self-validation and include its machine-readable report (as JSON) among your outputs. The experiment is successful only if every check passes.
+
+Required result artifact. Emit a long-format results table with exactly one row per (dataset, algorithm, seed, metric, cutoff) and the columns:
+
+    dataset, algorithm, algorithm_class, seed, metric, k, value
+
+where `metric` is one of {"nDCG", "Precision"} and `k` is one of {1, 5, 10}.
+
+Validation checks (all must pass):
+
+A. Completeness. Exactly 270 rows are present: 3 datasets × 3 algorithms × 5 seeds × 2 metrics × 3 cutoffs. No (dataset, algorithm, seed, metric, k) combination is missing or duplicated.
+
+B. Finiteness and range. Every `value` is a finite number in the closed interval [0, 1]. No NaN, no infinity, no placeholder.
+
+C. No degenerate blocks. No (dataset, algorithm) block is entirely zero. The three algorithms do not all produce identical metric vectors for the same (dataset, seed); ALS, ItemKNN, and MostPopular are distinct implementations and must give distinct results.
+
+D. Metric identity. For every (dataset, algorithm, seed), nDCG@1 equals Precision@1 within a tolerance of 1e-6.
+
+E. Seed effect. For at least one (dataset, algorithm, cutoff), the five per-seed nDCG values are not all identical, confirming that seeds genuinely alter the split.
+
+F. Reproducibility counts recorded. For each dataset, record and report: raw interaction count, count after implicit-conversion thresholding, count after 5-core filtering, and per-seed train and test interaction counts. For each dataset–algorithm–seed, record the fully-qualified algorithm class and the resolved hyperparameters.
+
+Report, per check, a pass/fail flag and a one-line detail. State the final coverage as N/270 and the number of failed checks. Do not report the experiment as complete unless coverage is 270/270 with zero failed checks.
