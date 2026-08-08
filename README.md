@@ -56,7 +56,7 @@ checksums.
 
 ## Runs and prompt context
 
-The following table lists all runs contained in `study/evidence/` and links each run to the corresponding prompt in `study/study_context/prompts/`. `I05` denotes five configured iterations and `Rxx` identifies the replicate.
+The following table lists all runs contained in `study/evidence/` and links each run to the corresponding prompt in `study/study_context/prompts/`. `I05` denotes five configured iterations and `Rxx` identifies the replicate. Additionally a machine-readable run overview is being provided in `study/evidence/run_inventory_evidence.csv`  [Run - Overview](study/evidence/run_inventory_evidence.csv)
 
 | Run | Prompt | Model / phase | Iter. | Replicate | Brief description |
 | --- | --- | --- | ---: | ---: | --- |
